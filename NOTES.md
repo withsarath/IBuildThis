@@ -23,3 +23,9 @@
 - can't have RSC as a child
 - Browser API's are allowed
 
+## Rendering Spectrum in Nextjs
+
+- Static: pre-build and cached forever
+- Dynamic: rendered per request
+- Revalidated: rebuild periodically
+- Streaming: Progressively streamed chucks
