@@ -3,27 +3,29 @@ import { ArrowRightIcon, ArrowUpRightIcon, StarIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import ProductCard from "@/components/products/ProductCard";
+import { getFeaturedProducts } from "@/lib/products/productsSelect";
 
-const featuredProducts = [
-  {
-    id: 1,
-    name: "PartyKit",
-    description: "A toolkit for creating party products",
-    tags: ["SaaS", "pricing", "Global"],
-    vote: 661,
-    isFeatured: true,
-  },
-  {
-    id: 2,
-    name: "NextJs Full-Stack Course",
-    description: "Learn to build beautifull production ready websites",
-    tags: ["Next.Js", "Full-Stack", "Course"],
-    vote: 550,
-    isFeatured: false,
-  },
-];
+// const featuredProducts = [
+//   {
+//     id: 1,
+//     name: "PartyKit",
+//     description: "A toolkit for creating party products",
+//     tags: ["SaaS", "pricing", "Global"],
+//     vote: 661,
+//     isFeatured: true,
+//   },
+//   {
+//     id: 2,
+//     name: "NextJs Full-Stack Course",
+//     description: "Learn to build beautifull production ready websites",
+//     tags: ["Next.Js", "Full-Stack", "Course"],
+//     vote: 550,
+//     isFeatured: false,
+//   },
+// ];
 
-export default function FeaturedProducts() {
+export default async function FeaturedProducts() {
+  const featuredProducts = await getFeaturedProducts()
   return (
     <section className="py-20 bg-muted/20">
       <div className="wrapper">
